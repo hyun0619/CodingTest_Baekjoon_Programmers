@@ -7,7 +7,7 @@ int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(false);
 
-	int n;
+	int n; //배열 n[8]로 풀 경우 시간초과..!
 	int max=0, index=0;
 
 
@@ -23,4 +23,5 @@ int main() {
 
 	cout << max << "\n" << index;
 	return 0;
+
 }
