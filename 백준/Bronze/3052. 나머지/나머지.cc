@@ -14,7 +14,7 @@ int main() {
 		cin >> num;
 		array[i] = num % 42;
 
-		for (int j = 0; j < i; j++) {
+		for (int j = 0; j < i; j++) { // j 범위를 0~9까지 해서 헤맸다.. i로 했어야함!
 			if (array[i] == array[j] ) {
 				count -= 1;
 				break;
