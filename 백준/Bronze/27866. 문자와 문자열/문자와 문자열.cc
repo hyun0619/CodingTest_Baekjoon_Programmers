@@ -7,11 +7,10 @@ int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(0);
 
-	int n;
-	string word;
+	string s;
+	int i;
 
-	cin >> word >> n;
-	cout << word[n - 1];
+	cin >> s >> i;
 
-	return 0;
+	cout << s[i - 1];
 }
