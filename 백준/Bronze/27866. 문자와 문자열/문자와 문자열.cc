@@ -11,6 +11,7 @@ int main() {
 	int i;
 
 	cin >> s >> i;
-
 	cout << s[i - 1];
+
+	return 0;
 }
