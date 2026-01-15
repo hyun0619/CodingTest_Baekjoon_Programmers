@@ -1,16 +1,15 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
 int solution(string s) {
+    vector<string> num =  {"zero", "one", "two", "three", "four",
+    "five", "six", "seven", "eight", "nine"};
     string answer = "", tmp = "";
     
-    vector<string> num =  {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-    
-    for (int i=0; i<s.size(); i++) {
-        if ('0' <= s[i] && '9'>= s[i]) {
+    for (int i=0; i<s.length();i++) {
+        if (s[i] >= '0' && s[i] <='9') {
             answer += s[i];
         }
         else tmp += s[i];
