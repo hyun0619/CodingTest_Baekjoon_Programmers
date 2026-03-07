@@ -5,5 +5,10 @@ using namespace std;
 
 int solution(int slice, int n) {
     
-    return (n+slice-1)/slice;
+    int answer = n/slice;
+    int tmp = n%slice;
+    
+    if (tmp > 0) answer++;
+    
+    return answer;
 }
