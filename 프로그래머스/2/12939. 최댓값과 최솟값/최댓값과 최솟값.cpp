@@ -1,52 +1,25 @@
 #include <string>
 #include <vector>
-#include <iostream>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
 string solution(string s) {
-    
     string answer = "";
-    bool MINUS = false;
-    int MAX = -99999999;
-    int MIN = 99999999;
     int num = 0;
     
-    for(int i = 0; i < s.size(); i++)
-    {
-        if(s[i] == ' ')
-        {
-            MINUS = false;
-            if (num < MIN)
-                MIN = num;
-            if (num > MAX)
-                MAX = num;
-            num = 0;
-            continue;
-        }
-        else if (s[i] == '-')
-        {
-            MINUS = true;
-            continue;
-        }
-        else
-        {
-                num *= 10;
-                if(MINUS)
-                    num -= (s[i] - '0');
-                else
-                    num += (s[i] - '0');
-        }
-        
-    }
-    if (num < MIN)
-        MIN = num;
-    if (num > MAX)
-        MAX = num;
+    stringstream ss(s);
     
-    answer += to_string(MIN);
-    answer.push_back(' ');
-    answer += to_string(MAX);
-
+    ss >> num;
+    int min_num = num, max_num = num;
+    
+    while (ss >> num) {
+        min_num = min(min_num, num);
+        max_num = max(max_num, num);
+    }
+    
+    answer = to_string(min_num) + " " + to_string(max_num);
+        
     return answer;
 }
